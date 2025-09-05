@@ -1,0 +1,7 @@
+{
+  "studentsInfo": [
+    { "id": 1, "name": "John Doe", "age": 15, "grade": "A" },
+    { "id": 2, "name": "Jane Smith", "age": 16, "grade": "C" },
+    {"id":3, "name":" Zarah Ibrahim Yunus", "age":13, "grade":"D"}
+  ]
+}

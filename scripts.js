@@ -1,11 +1,17 @@
+const nameInput = document.querySelector(".name");
+const ageInput = document.querySelector("input[type=number]");
+const gradeInput = document.querySelector(".grade");
+const addBtn = document.querySelector(".addBtn");
+const studentList = document.querySelector(".studentList");
 const emptyMsg = document.getElementById("emptyMsg");
+const apiUrl = "http://localhost:5500/studentsInfo";
 
-// update empty message visibility
 function updateEmptyMsg() {
-  if (studentList.children.length === 0) {
+  if (students.length === 0) {
     emptyMsg.style.display = "block";
   } else {
-    emptyMsg.style.display = "none";  
+    emptyMsg.style.display = "none";
   }
 }
-updateEmptyMsg();
+  updateEmptyMsg();
+
