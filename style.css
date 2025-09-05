@@ -1,0 +1,96 @@
+*{
+ margin: 0;
+ padding: 0;
+ font-family: 'Times New Roman', Times, serif; 
+ box-sizing: border-box; 
+}
+.container{
+ width: auto;
+ min-height: 100vh;
+ background:linear-gradient(135deg,#ffdfb9,#4ec9d2);
+ padding: 16px;
+}
+.managementApp{
+    width: 100%;
+    margin: 100px, auto,20px;
+    max-width: 840px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+.managementApp h1{
+    color: #04b6c2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.addNewStudent{
+    width: 100%;
+    margin: 100px, auto,20px;
+    max-width: 840px;
+    background-color: #7fc2d1;
+    padding: 20px;
+    border-radius: 10px;
+}
+.addNewStudent h2{
+    margin-bottom: 13px;
+}
+.name{
+    width: 380px;
+    border: none;
+    outline: none;
+    height: 25px;
+}
+.name:placeholder-shown{
+    padding: 5px;
+}
+input[type=number]{
+    width: 80px;
+    border: none;
+    outline: none;
+    height: 25px;
+}
+input[type=number]:placeholder-shown{
+    padding:5px ;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.grade{
+    width: 80px;
+    border: none;
+    outline: none;
+    height: 25px;
+}
+.grade:placeholder-shown{
+    padding: 5px;
+}
+.addBtn{
+    width: 80px;
+    outline: none;
+    height: 25px;
+    border: none;
+    background-color: #78fad1;
+    font-weight: 900;
+}
+.addBtn:hover{
+    background-color: #03f4a8;
+}
+.emptyMsg {
+  color: gray;
+  font-style: italic;
+}
+.listHeading{
+    margin: 13px;
+    
+}
+.studentList::after{
+    width: 100%;
+    margin: 100px, auto,20px;
+    max-width: 840px;
+    background-color: #f5f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #7fc2d1;
+}
