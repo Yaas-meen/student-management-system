@@ -1,7 +1,46 @@
 {
   "studentsInfo": [
-    { "id": 1, "name": "John Doe", "age": 15, "grade": "A" },
-    { "id": 2, "name": "Jane Smith", "age": 16, "grade": "C" },
-    {"id":3, "name":" Zarah Ibrahim Yunus", "age":13, "grade":"D"}
+    {
+      "id": "c564",
+      "name": "Fatima Ibrahim",
+      "age": "16",
+      "grade": "B+"
+    },
+    {
+      "id": "9273",
+      "name": "Hafsat Gidado",
+      "age": "15",
+      "grade": "A"
+    },
+    {
+      "id": "848e",
+      "name": "Maryam Sada Umar",
+      "age": "16",
+      "grade": "D"
+    },
+    {
+      "id": "cec2",
+      "name": "Imran Yakubu",
+      "age": "18",
+      "grade": "F9"
+    },
+    {
+      "id": "ff62",
+      "name": "Kullu Hauwa Abba",
+      "age": "14",
+      "grade": "A+"
+    },
+    {
+      "id": "1d92",
+      "name": "Anas Abdul",
+      "age": "19",
+      "grade": "D"
+    },
+    {
+      "id": "b6b5",
+      "name": "James Idris",
+      "age": "14",
+      "grade": "F9"
+    }
   ]
 }
