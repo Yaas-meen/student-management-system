@@ -7,7 +7,7 @@
 .container{
  width: auto;
  min-height: 100vh;
- background:linear-gradient(135deg,#ffdfb9,#4ec9d2);
+ background:linear-gradient(135deg, #5390D9, #48BFE3);
  padding: 16px;
  display: flex;
  justify-content: center;
@@ -17,12 +17,14 @@
     width: 100%;
     margin: 100px auto 20px;
     max-width: 640px;
-    background-color: #fff;
+    background-color: #F0F8FF;
     padding: 20px;
     border-radius: 20px;
+    border: 2px solid #03045e;
+    box-shadow: 0 4px 8px rgba(0.8, 0.5, 0, 0.8);
 }
 .managementApp h1{
-    color: #04b6c2;
+    color: #48BFE3;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -35,9 +37,12 @@
     width: 100%;
     margin: 15px auto 20px;
     max-width: 640px;
-    background-color: #7fc2d1;
+    background-color: #48BFE3;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #0096c7;
+    text-align: center;
 }
 .addNewStudent h2{
     margin-bottom: 13px;
@@ -86,6 +91,10 @@ input[type=number]:placeholder-shown,
 .grade:placeholder-shown{
     padding: 5px;
     font-size: 15px;
+    color: #778da9;
+}
+input:focus {
+    border: 2px solid #023e8a;
 }
 .addBtn{
     width:100px;
@@ -93,21 +102,21 @@ input[type=number]:placeholder-shown,
     outline: none;
     height: 25px;
     border: none;
-    background-color: #78fad1;
+    background-color: #80FFDB;
     font-weight: 900;
     border-radius: 5px;
 }
 .addBtn:hover{
-    background-color: #03f4a8;
+    background-color: #72EFDD;
 }
 .emptyMsg {
   color: gray;
   font-style: italic;
   text-align: center;
+  font-size: 1.5em;
 }
 .listHeading{
     margin: 13px;
-    
 }
 .studentList{
     margin-top: 15px;
@@ -121,9 +130,10 @@ input[type=number]:placeholder-shown,
   padding: 15px;
   margin: 12px 0;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0.1,0,0,0.5);
   position: relative;
   gap: 10px;
+  height: auto;
 }
 
 .studentCard::before {
@@ -132,9 +142,9 @@ input[type=number]:placeholder-shown,
   top: 0;
   bottom: 0;
   left: 0;
-  width: 8px;
-  height: 100%;
-  background: linear-gradient(to bottom, #ff6ec7, #00c9a7);
+  width: 7px;
+  height: auto;
+  background: linear-gradient(to bottom, #48BFE3);
   border-radius: 3px 0 0 3px;
 }
 
@@ -159,42 +169,39 @@ input[type=number]:placeholder-shown,
 }
 
 .editBtn {
-  background-color: #68efbb;
+  background-color: #80FFDB;
 }
 
 .deleteBtn {
   background-color: #fa6a3e;
 }
 .editBtn:hover {
-  background-color: #32d89c;
+  background-color: #72EFDD;
 }
 .deleteBtn:hover {
   background-color: #ff3b1f;
 }
-@media (max-width: 600px) {
+@media (min-width: 320px) and (max-width: 600px) {
   .managementApp, .addNewStudent {
     padding: 15px;
     margin: 20px auto;
     width: 95%;
   }
-  .name{
-    width: 100%;  
-    margin-bottom: 10px; 
-    font-size: 16px; 
-  }
-  input[type=number], 
-  .grade
-  {
-    flex: 1;
-    width: 50%;  
-    margin-bottom: 10px; 
-    font-size: 16px; 
+
+  .name {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
   }
 
-  .studentCard p {
-    font-size: 16px; 
+  input[type=number],
+  .grade {
+    flex: 1;
+    width: 50%;
+    margin-bottom: 10px;
+    font-size: 16px;
   }
-  .addBtn{
+  .addBtn {
     width: 100%;
     font-size: 16px;
   }
@@ -202,7 +209,45 @@ input[type=number]:placeholder-shown,
     font-size: 22px;
   }
 
-  .addNewStudent h2 {
+  .addNewStudent h2,
+  .listHeading {
     font-size: 18px;
+  }
+
+  .studentCard {
+    flex-direction: column;   
+    align-items: stretch;     
+    height: auto;
+  }
+
+  .studentInfo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .studentInfo .age,
+  .studentInfo .grade {
+    display: inline-block;
+    width: 48%;
+    margin-right: 2%;
+    font-size: 16px;
+  }
+
+  .studentCard p {
+    font-size: 16px;
+  }
+
+  .studentActions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  .editBtn,
+  .deleteBtn {
+    flex: 1;
+    min-width: 70px;
+    height: 30px;
+    font-size: 14px;
   }
 }
