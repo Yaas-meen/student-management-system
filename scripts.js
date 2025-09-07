@@ -5,7 +5,6 @@ const gradeInput = document.querySelector(".grade");
 const addBtn = document.querySelector(".addBtn");
 const studentList = document.querySelector(".studentList");
 const emptyMsg = document.getElementById("emptyMsg");
-const deleteAllBtn = document.getElementById(".deleteAllBtn");
 
 let students = [];
 window.onload = loadStudents;
