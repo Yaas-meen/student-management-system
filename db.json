@@ -1,3 +1,22 @@
 {
-  "studentsInfo": []
+  "studentsInfo": [
+    {
+      "id": "2711",
+      "name": "Fatima",
+      "age": "12",
+      "grade": "A"
+    },
+    {
+      "id": "67c3",
+      "name": "Ibrahim",
+      "age": "11",
+      "grade": "B"
+    },
+    {
+      "id": "378b",
+      "name": "Imran",
+      "age": "15",
+      "grade": "D-"
+    }
+  ]
 }

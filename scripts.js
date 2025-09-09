@@ -81,6 +81,7 @@ function addStudent() {
 function editStudent(id) {
   const student = students.find(s => s.id == id);
   if (!student) return;
+  if (!confirm("Are you sure you want to edit this student?"))return;
 
   nameInput.value = student.name;
   ageInput.value = student.age;
@@ -117,6 +118,7 @@ function updateStudent(id) {
 }
 
 function deleteStudent(id) {
+  if (!confirm("Are you sure you want to edit this student?"))return;
   fetch(`${apiURL}/${id}`, { method: "DELETE" })
     .then(() => loadStudents());
 }
