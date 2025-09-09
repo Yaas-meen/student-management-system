@@ -27,7 +27,7 @@ function showStudents() {
     emptyMsg.style.display = "block";
     return;
   }
-
+  else
   emptyMsg.style.display = "none";
 
   students.forEach(student => {
@@ -63,7 +63,7 @@ function addStudent() {
     alert("Please fill all fields");
     return;
   }
-
+  
   const newStudent = { name, age, grade };
 
   fetch(apiURL, {
