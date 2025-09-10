@@ -5,6 +5,7 @@ const gradeInput = document.querySelector(".grade");
 const addBtn = document.querySelector(".addBtn");
 const studentList = document.querySelector(".studentList");
 const emptyMsg = document.getElementById("emptyMsg");
+const clearAllBtn = document.getElementById("clearAllBtn");
 
 let students = [];
 
@@ -19,16 +20,20 @@ function loadStudents() {
     })
     .catch(err => console.error("Error fetching students:", err));
 }
+    const fetchAllBtn = document.getElementById("fetchAllBtn");
+    fetchAllBtn.onclick = () => loadStudents();
 
 function showStudents() {
   studentList.innerHTML = "";
 
   if (students.length === 0) {
     emptyMsg.style.display = "block";
+    clearAllBtn.style.display = "none";
     return;
+  } else {
+    emptyMsg.style.display = "none";
+    clearAllBtn.style.display = "inline-block";
   }
-  else
-  emptyMsg.style.display = "none";
 
   students.forEach(student => {
     const div = document.createElement("div");
@@ -44,10 +49,8 @@ function showStudents() {
         <button class="deleteBtn">🗑️ Delete</button>
       </div>
     `;
-
     div.querySelector(".editBtn").onclick = () => editStudent(student.id);
     div.querySelector(".deleteBtn").onclick = () => deleteStudent(student.id);
-
     studentList.appendChild(div);
   });
 }
@@ -59,11 +62,8 @@ function addStudent() {
   const age = ageInput.value.trim();
   const grade = gradeInput.value.trim();
 
-  if (!name || !age || !grade) {
-    alert("Please fill all fields");
-    return;
-  }
-  
+  if (!name || !age || !grade) return;
+
   const newStudent = { name, age, grade };
 
   fetch(apiURL, {
@@ -81,7 +81,7 @@ function addStudent() {
 function editStudent(id) {
   const student = students.find(s => s.id == id);
   if (!student) return;
-  if (!confirm("Are you sure you want to edit this student?"))return;
+  if (!confirm("Are you sure you want to edit this student?")) return;
 
   nameInput.value = student.name;
   ageInput.value = student.age;
@@ -95,11 +95,7 @@ function updateStudent(id) {
   const name = nameInput.value.trim();
   const age = ageInput.value.trim();
   const grade = gradeInput.value.trim();
-
-  if (!name || !age || !grade) {
-    alert("Please fill all fields");
-    return;
-  }
+  if (!name || !age || !grade) return;
 
   const updatedStudent = { name, age, grade };
 
@@ -118,10 +114,18 @@ function updateStudent(id) {
 }
 
 function deleteStudent(id) {
-  if (!confirm("Are you sure you want to edit this student?"))return;
+  if (!confirm("Are you sure you want to delete this student?")) return;
   fetch(`${apiURL}/${id}`, { method: "DELETE" })
     .then(() => loadStudents());
 }
+
+clearAllBtn.onclick = () => {
+  if (!confirm("Are you sure you want to delete all students?")) return;
+  const deletePromises = students.map(student =>
+    fetch(`${apiURL}/${student.id}`, { method: "DELETE" })
+  );
+  Promise.all(deletePromises).then(() => loadStudents());
+};
 
 function clearForm() {
   nameInput.value = "";
